@@ -15,7 +15,8 @@ sudo apt-get -y --force-yes install libnuma-dev numactl
 
 # clang
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
-echo -e "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main \ndeb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic main \ndeb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main \ndeb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main \ndeb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-12 main \ndeb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-12 main" | sudo tee -a /etc/apt/sources.list
+echo "\n\ndeb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main \ndeb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic main \ndeb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main \ndeb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main \ndeb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-12 main \ndeb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-12 main" | sudo tee  /etc/apt/sources.list.d/llvmsrc.list
+sudo apt update
 sudo apt-get -y --force-yes install clang-12
 
 # cityhash

@@ -1,0 +1,4 @@
+python3 scripts/uniform.py 10000 100000 2 5 10 > ./data/data1 
+./build/data_processing/serializer -i ./data/data1 -o ./data/data2
+data3需要是文件夹
+sudo ./build/data_processing/partitioner -i ./data/data2 -o ./data/data3/ -s term -n 3
