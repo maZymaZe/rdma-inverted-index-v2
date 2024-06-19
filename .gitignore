@@ -11,3 +11,9 @@ cmake-build-release/
 .cache
 .idea
 tmp/*
+ssb-lists.txt
+tables/*
+ssb-queries.txt
+toy-list.txt
+toy-queries.txt
+
