@@ -92,7 +92,7 @@ void QueuePair::transition_to_rtr(const QPInfo& remote_buffer) {
     IBV_QP_STATE | IBV_QP_AV | IBV_QP_PATH_MTU | IBV_QP_DEST_QPN |
       IBV_QP_RQ_PSN | IBV_QP_MIN_RNR_TIMER | IBV_QP_MAX_DEST_RD_ATOMIC);
   lib_debug(rtcode);
-  lib_assert(code == 0, "Cannot change state of queue pair to RTR");
+  lib_assert(rtcode == 0, "Cannot change state of queue pair to RTR");
   lib_debug("Transitioned state to RTR successfully");
 }
 
