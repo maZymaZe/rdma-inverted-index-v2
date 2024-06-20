@@ -1,7 +1,7 @@
 sudo apt update
 sudo apt install -y --force-yes nfs-kernel-server ufw
-sudo ufw allow from 10.10.1.1/24 to any port nfs
 sudo ufw allow ssh
+sudo ufw allow from 10.10.1.1/24
 echo y | sudo ufw enable
 sudo systemctl start nfs-kernel-server.service
 sudo mkdir -p /mnt/sharefolder
