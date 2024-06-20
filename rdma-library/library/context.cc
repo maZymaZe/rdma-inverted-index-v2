@@ -21,13 +21,13 @@ Context::Context(Configuration& config,
   lib_assert(device_list != nullptr, "Device list is null");
   lib_assert(0 <= device_idx && device_idx < num_devices,
              "Device " + std::to_string(device_idx) + " not found");
-  device_index = -1;
+  int idx = -1;
   for (int i = 0; i < num_devices; i++) {
     if (strcmp(ibv_get_device_name(device_list[i]), "mlx5_3") == 0)
-      device_index = i;
+      idx = i;
   }
-  lib_assert(device_index != -1, "no mlx5_3");
-  device_ = device_list[device_idx];
+  lib_assert(idx != -1, "no mlx5_3");
+  device_ = device_list[idx];
 
   std::cerr << num_devices << " device(s) found" << std::endl;
   std::cerr << "Selected device: " << ibv_get_device_name(device_) << std::endl;
