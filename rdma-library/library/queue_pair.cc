@@ -91,7 +91,8 @@ void QueuePair::transition_to_rtr(const QPInfo& remote_buffer) {
     &attributes,
     IBV_QP_STATE | IBV_QP_AV | IBV_QP_PATH_MTU | IBV_QP_DEST_QPN |
       IBV_QP_RQ_PSN | IBV_QP_MIN_RNR_TIMER | IBV_QP_MAX_DEST_RD_ATOMIC);
-  std::cerr << rtcode << "   port:" << attributes.ah_attr.port_num << std::endl;
+  std::cerr << rtcode << "   port:" << (int)attributes.ah_attr.port_num
+            << std::endl;
   lib_assert(rtcode == 0, "Cannot change state of queue pair to RTR");
   lib_debug("Transitioned state to RTR successfully");
 }
